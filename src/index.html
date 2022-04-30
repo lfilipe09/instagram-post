@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Web page CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
 
-    <!-- Simple lightbox CSS -->
-    <link rel="stylesheet" href="assets/css/simple-lightbox.min.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
     <!-- Favicons -->
     <link
@@ -33,34 +36,47 @@
     <title>JabTV Landing Page</title>
   </head>
   <body>
-    <!-- Navbar -->
+    <main>
+      <div id="post-wrapper">
+      <header><h1>Erik</h1><p>San Francisco, California</p></header>
+          <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="slider-images">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+
+      </div>
+      <div>Icons</div>
+      <section>Textos dos comentários</section>
+      <footer>Comment</footer>
+    </div>
+    </main>
 
     <!-- Dark/light theme switcher -->
 
-    <!-- Bars -->
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Hero section -->
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
 
-    <!-- About section -->
-
-    <!-- Lightbox image gallery -->
-
-    <!-- Jab TV Stakeholders -->
-
-    <!-- Email subscription -->
-
-    <!-- Social icons -->
-
-    <!-- Scroll to top button -->
-
-    <!-- Web page script -->
-
-
-    <!-- Ion icons CDN -->
-
-
-    <!-- Simple lightbox -->
-
+    <!-- Lorem Picsum -->
+    <script src="javascripts/loremPicsum.js"></script>
 
   </body>
 </html>
