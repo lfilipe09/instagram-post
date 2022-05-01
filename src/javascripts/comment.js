@@ -35,7 +35,7 @@ function addComment(ev) {
       const replyButton = document.createElement('button');
       replyButton.className = 'reply';
       replyButton.innerHTML = 'Reply';
-      let date = ((new Date().getDate().toString().padStart(2, '0'))) + "/" + ((new Date().getMonth() + 1).toString().padStart(2, '0')) + "/" + new Date().getFullYear().toString() + "  " + new Date().getHours().toString().padStart(2, '0') +  ":" + new Date().getMinutes().toString().padStart(2, '0')
+      let date = ((new Date().getMonth() + 1).toString().padStart(2, '0')) + "/" + (new Date().getDate().toString().padStart(2, '0')) + "/" + new Date().getFullYear().toString() + "  " + new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
       const dateHour = document.createElement('p');
       dateHour.innerHTML = date + " • ";
       dateHour.className = 'date';
@@ -58,7 +58,7 @@ function addComment(ev) {
     }
   }else{
     if(warningMessage.children.length === 0){
-      let warningText = 'A mensagem não pode ser vazia!'
+      let warningText = 'The message cannot be empty!'
       const warningBox = document.createElement('p');
       warningBox.innerHTML = warningText;
       warningBox.style.color = 'var(--heart-red)';
@@ -90,7 +90,7 @@ function addReply(personNumber, personMessage){
       warningMessage.innerHTML = ""
     }
     let commentText, wrapDiv, wrapImageText;
-    let date = ((new Date().getDate().toString().padStart(2, '0'))) + "/" + ((new Date().getMonth() + 1).toString().padStart(2, '0')) + "/" + new Date().getFullYear().toString() + "  " + new Date().getHours().toString().padStart(2, '0') +  ":" + new Date().getMinutes().toString().padStart(2, '0')
+    let date = ((new Date().getMonth() + 1).toString().padStart(2, '0')) + "/" + (new Date().getDate().toString().padStart(2, '0')) + "/" + new Date().getFullYear().toString() + "  " + new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
     commentText = personMessage;
     const textBox = document.createElement('span');
     textBox.innerHTML = commentText;
@@ -120,7 +120,7 @@ function addReply(personNumber, personMessage){
     setOnLocalStorage()
   }else if(!replyPerson){
     if(warningMessage.children.length === 0){
-      let warningText = 'Não encontrei essa pessoa :( confirme se o nome do usuário está escrito corretamente ou delete o "@" para um novo comentário.'
+      let warningText = "I didn't find this person :( confirm that the username is spelled correctly or delete the '@' for a new comment."
       const warningBox = document.createElement('p');
       warningBox.innerHTML = warningText;
       warningBox.style.color = 'var(--heart-red)';
@@ -131,7 +131,7 @@ function addReply(personNumber, personMessage){
     }
   }else{
     if(warningMessage.children.length === 0){
-      let warningText = 'A mensagem não pode ser vazia!'
+      let warningText = 'The message cannot be empty!'
       const warningBox = document.createElement('p');
       warningBox.innerHTML = warningText;
       warningBox.style.color = 'var(--heart-red)';
