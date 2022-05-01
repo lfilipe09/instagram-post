@@ -26,7 +26,6 @@ function main(){
 
   imagesData.map((imageData) => {
     let image = createImage(compressImageUrl(imageData.download_url))
-    console.log('olha a image: ', image)
     document.getElementById('slider-images').appendChild(image)
   })
 
