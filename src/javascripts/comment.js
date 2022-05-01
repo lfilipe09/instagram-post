@@ -14,18 +14,20 @@ function setOnLocalStorage() {
   localStorage.setItem('comments', document.getElementById('allComments').innerHTML);
 }
 
-function addComment(ev) {
-  let commentText, wrapDiv;
-  const textBox = document.createElement('div');
-  wrapDiv = document.createElement('div');
-  wrapDiv.className = 'wrapper';
-  wrapDiv.style.marginLeft = 0;
-  commentText = `<b>Comment</b> ${document.getElementById('newComment').value}`;
-  document.getElementById('newComment').value = '';
-  textBox.innerHTML = commentText;
-  wrapDiv.append(textBox);
-  commentContainer.appendChild(wrapDiv);
-  setOnLocalStorage()
+function addComment() {
+  if(document.getElementById('newComment').value){
+    let commentText, wrapDiv;
+    const textBox = document.createElement('div');
+    wrapDiv = document.createElement('div');
+    wrapDiv.className = 'wrapper';
+    wrapDiv.style.marginLeft = 0;
+    commentText = `<b>Comment</b> ${document.getElementById('newComment').value}`;
+    document.getElementById('newComment').value = '';
+    textBox.innerHTML = commentText;
+    wrapDiv.append(textBox);
+    commentContainer.appendChild(wrapDiv);
+    setOnLocalStorage()
+  }
 }
 
 getComments()
