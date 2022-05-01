@@ -1,5 +1,4 @@
 document.getElementById('heart-button').addEventListener('click', function (ev) {
-  console.log('executei')
   if (document.querySelector('.heart')){
     document.querySelector('.heart').classList.remove('heart')
     ev.target.classList.add('heart-pulse')
