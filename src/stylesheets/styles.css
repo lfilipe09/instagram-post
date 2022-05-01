@@ -193,6 +193,17 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+.switch-darkmode-wrapper{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+}
+.switch-darkmode-wrapper img{
+  width: 10.5px;
+}
+
 .slider.round {
   border-radius: 34px;
 }
@@ -211,7 +222,7 @@ input:checked + .slider:before {
   margin-bottom: 30px;
 }
 
-.user-reaction svg{
+.user-reaction svg:not(:first-child){
   cursor: pointer;
 }
 
@@ -224,6 +235,7 @@ input:checked + .slider:before {
 }
 
 .heart{
+  cursor: pointer;
   fill: var(--background-main);
   stroke: var(--text);
   transform: scale(0.8);
@@ -231,6 +243,7 @@ input:checked + .slider:before {
 }
 
 .comment.share {
+  cursor: pointer;
   stroke: var(--text);
 }
 
