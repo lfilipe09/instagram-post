@@ -38,7 +38,15 @@
   <body>
     <main>
       <div id="post-wrapper">
-      <header><h1>Erik</h1><p>San Francisco, California</p></header>
+      <header>
+        <div class="user-wrapper">
+          <img src="images/img_avatar.png" alt="Avatar">
+          <div class="info-user-wrapper">
+          <h1>Erik Dunlop</h1>
+          <p>San Francisco, California</p>
+          </div>
+        </div>
+      </header>
           <!-- Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper" id="slider-images">
@@ -48,7 +56,12 @@
         <div class="swiper-pagination"></div>
 
       </div>
-      <div>Icons</div>
+      <div class="post-details">
+      <div class="user-reaction">
+        <img src="images/heart.svg" class="heart-pulse"/>
+        <img src="images/comment.svg"/>
+        <img src="images/share.svg"/>
+      </div>
       <section id="allComments"></section>
       <footer>
         <input
@@ -56,6 +69,7 @@
         />
         <button id="addComments">Add Comment</button>
       </footer>
+    </div>
     </div>
     </main>
 

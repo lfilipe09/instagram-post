@@ -20,7 +20,7 @@ function addComment(ev) {
   wrapDiv = document.createElement('div');
   wrapDiv.className = 'wrapper';
   wrapDiv.style.marginLeft = 0;
-  commentText = document.getElementById('newComment').value;
+  commentText = `<b>Comment</b> ${document.getElementById('newComment').value}`;
   document.getElementById('newComment').value = '';
   textBox.innerHTML = commentText;
   wrapDiv.append(textBox);
