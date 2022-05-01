@@ -7,17 +7,41 @@ html, body {
 	position: relative;
   height: 100%;
 }
-	/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
 
 body {
-	background: #fff;
+  /* Definition of colors */
+  --bg-body: #ffffff;
+  --border-main: #DEDEDE;
+  --background-main: #FCFCFC;
+  --heart-red: #ED4956;
+  --footer-wrapper: #F1F1F1;
+  --post-button: #3D8AFF;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+  --text: #000000;
+
+	background: var(--bg-body);
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: var(--text);
   margin: 0;
   padding: 0;
 	text-rendering: optimizeLegibility;
+}
+
+.dark {
+  --bg-body: #0e1725;
+  --border-main: #263c60;
+  --background-main: #142035;
+  --heart-red: #ED4956;
+  --footer-wrapper: #263c60;
+  --post-button: #f1f1f1;
+  --scrollbar-track: #0e1725;
+  --scrollbar-thumb: #263c60;
+  --scrollbar-thumb-hover: #142035;
+  --text: #f1f1f1;
 }
 	/* sets the base font size for the document; turns on kerning pairs and ligatures */
 
@@ -53,8 +77,8 @@ h1 {
 #post-wrapper{
   width: 100%;
   max-width: 526px;
-  border: 1px solid #DEDEDE;
-  background-color: #FCFCFC;
+  border: 1px solid var(--border-main);
+  background-color: var(--background-main);
   border-radius: 5px;
 }
 
@@ -90,7 +114,8 @@ h1 {
 }
 
 .user-wrapper{
-  display: flex;
+  display: grid;
+  grid-template-columns: 50px 1fr 53px;
   padding: 15px 25px 10px;
   align-items: center;
 }
@@ -115,6 +140,67 @@ h1 {
   margin: 15px 25px 25px;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 23px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height:15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .user-reaction{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -125,7 +211,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-.user-reaction img{
+.user-reaction svg{
   cursor: pointer;
 }
 
@@ -138,11 +224,14 @@ h1 {
 }
 
 .heart{
-  cursor: pointer;
-  fill: white;
-  stroke: black;
+  fill: var(--background-main);
+  stroke: var(--text);
   transform: scale(0.8);
   transform-origin: center;
+}
+
+.comment.share {
+  stroke: var(--text);
 }
 
 .heart-pulse {
@@ -169,8 +258,9 @@ h1 {
 
 .footer-wrapper input {
   width: 100%;
+  color: var(--text);
   border: 0;
-  background-color: #F1F1F1;
+  background-color: var(--footer-wrapper);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   margin: 0;
@@ -186,8 +276,8 @@ h1 {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-weight: 700;
   cursor: pointer;
-  color: #3D8AFF;
-  background-color: #F1F1F1;
+  color: var(--post-button);
+  background-color: var(--footer-wrapper);
   padding-right: 15px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -235,15 +325,15 @@ h1 {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--scrollbar-track);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--scrollbar-thumb);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--scrollbar-thumb-hover);
 }
