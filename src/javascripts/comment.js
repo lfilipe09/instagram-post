@@ -17,9 +17,9 @@ function setOnLocalStorage() {
 function addComment() {
   if(document.getElementById('newComment').value){
     let commentText, wrapDiv;
-    const textBox = document.createElement('div');
+    const textBox = document.createElement('span');
     wrapDiv = document.createElement('div');
-    wrapDiv.className = 'wrapper';
+    wrapDiv.className = 'comment-wrapper';
     wrapDiv.style.marginLeft = 0;
     commentText = `<b>Comment</b> ${document.getElementById('newComment').value}`;
     document.getElementById('newComment').value = '';
