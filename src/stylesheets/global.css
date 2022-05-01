@@ -20,6 +20,7 @@ body {
   --scrollbar-thumb: #888;
   --scrollbar-thumb-hover: #555;
   --text: #000000;
+  --subtext: #aaa9a9;
 
 	background: var(--bg-body);
   font-family: 'Inter', Helvetica, Arial, sans-serif;
@@ -42,6 +43,7 @@ body {
   --scrollbar-thumb: #263c60;
   --scrollbar-thumb-hover: #142035;
   --text: #f1f1f1;
+  --subtext: #3c5987;
 }
 
 body, p, h1 {
@@ -58,8 +60,8 @@ main{
 
 section{
   overflow-y: auto;
-  max-height: 101px;
-  min-height: 70px;
+  max-height: 115px;
+  min-height: 65px;
 }
 
 footer, header, section {

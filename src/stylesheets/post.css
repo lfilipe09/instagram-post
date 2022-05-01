@@ -78,6 +78,32 @@
 }
 .comment-wrapper{
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2px;
+}
+
+.reply-wrapper{
+  display: flex;
+  font-size: 9px;
+  align-items: flex-end;
+  font-weight: 600;
+  color: var(--subtext);
+}
+
+.reply-wrapper button{
+  border: 0;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--subtext);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  padding: 0 3px;
+}
+
+.reply-wrapper button:hover{
+  opacity: 60%;
 }
 
 .post-description{
